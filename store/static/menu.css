@@ -1,0 +1,135 @@
+body{
+    margin: 0;
+    background-color: lightyellow;
+}
+h1{
+    color: goldenrod;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-left: 240px;
+}
+img{
+    height: 370px;
+    width: 270px;
+    border-radius: 3px;
+}
+.container{
+    display: flex;
+    position: relative;
+    margin-left: 240px;
+    margin-right: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+}
+.items{
+    margin: 8px;
+    padding: 10px;
+    background-color: white;
+    color: grey;
+    border-radius: 3px;
+    margin-top: 12px;
+}
+.price-flex{
+    display: flex;
+}
+button{
+    border-width: 0px;
+    color: lightyellow;
+    padding: 10px 100px;
+    background-color: goldenrod;
+    border-radius: 3px;
+}
+a{
+    text-decoration: none;
+    color: goldenrod;
+}
+a:visited{
+    color: goldenrod;
+}
+.sidemenu{
+    display: flex;
+    position: fixed;
+    top: 50px;
+    left: 40px;
+    width: 200px;
+    background-color: white;
+    flex-direction: column;
+}
+.sm-item{
+    display: flex;
+    justify-content: start;
+    padding: 10px;
+    border: 2px solid goldenrod;
+    border-top: 1px solid goldenrod;
+    border-bottom: 1px solid goldenrod;
+    border-radius: 2px;
+}
+h3{
+    margin: 0;
+    padding: 5px;
+}
+b{
+    margin: 0;
+    padding: 0;
+}
+.category{
+    margin: 0;
+    padding: 0;
+}
+.btn-button{
+    display: flex;
+    justify-content: center;
+}
+.discount-price{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+@media only screen and (max-width:900px){
+    .sidemenu{
+        flex-direction: row;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        flex-wrap: wrap;
+        background-color: lightyellow;
+        margin-bottom: 10px;
+    }
+    .container{
+        margin: 10px;
+        margin-bottom: 100px;
+        position: absolute;
+    }
+    h1{
+        margin: 10px;
+        margin-top: 100px;
+
+    }
+    .sm-item{
+        background-color: #fff;
+    }
+
+}
+@media only screen and (max-width:650px){
+    img{
+        width: 100%;
+        min-height: 550px;
+    }
+    .sm-item{
+        width: 80%;
+        flex-direction: column;
+    }
+    .sidemenu{
+        top: none;
+        left: none;
+        justify-content: center;
+    }
+    .h1{
+        margin-top: 100px;
+        position: absolute;
+    }
+
+}

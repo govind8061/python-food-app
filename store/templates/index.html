@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrderFood</title>
+    <link rel="stylesheet" href="{%static 'menu.css' %}">
+</head>
+<body>
+    <h1>Food Menu</h1>
+    <div class="container">
+        {% load index %}
+        {% for food in foods %}
+        <div class="items">
+            <div class="item-1"><h3>{{food.name}}</h3></div>
+            <div class="item-1"><img src="{{ food.img.url }}"></div>
+            <div><p class="category"><b>{{food.category}}</b></p></div>
+            <div class="price-flex">
+                {% if food.discount == 0  %}
+                <div><p><b>&nbsp;Rs.&nbsp;{{food.price}}</b></p></div>
+                {% else %}
+                <div><p><b>&nbsp;Rs.&nbsp;<s>{{food.price}}</s></b></p></div>
+                <div class="discount-price"> 
+                    <div><p><b>&nbsp;&nbsp;{{d_price|index:forloop.counter0}}</b></p></div>
+                    <div><p><b>-{{food.discount}}%</b></p></div>              
+                </div>
+                {% endif %}             
+            </div>
+            <div class="btn-button">
+                <div><button>OrderNow</button></div>   
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <aside>
+        <div class="sidemenu">
+            <div class="sm-item"><a href="/">All Products</a></div>
+            {% for x in category  %}                           
+            <div class="sm-item">
+                <div><a href="/?category={{x.id}}">{{x.name}}</a></div>
+            </div>
+            {% endfor %}
+        </div>
+    </aside>
+</body>
+</html>
